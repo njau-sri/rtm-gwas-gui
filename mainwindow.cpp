@@ -246,7 +246,7 @@ void MainWindow::startProcess(const QString &prog, const QStringList &args)
 
     if (Parameter::openmp > 0) {
         QStringList env = QProcess::systemEnvironment();
-        env << QString("OMP_NUM_THREADS=%1").arg(Parameter::openmp);
+        env << QString(QLatin1String("OMP_NUM_THREADS=%1")).arg(Parameter::openmp);
         proc_->setEnvironment(env);
     }
 
