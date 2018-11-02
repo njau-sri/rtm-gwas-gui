@@ -13,7 +13,7 @@ DialogGSC::DialogGSC(QWidget *parent) :
 
     ui->lineEditVCF->setText(Parameter::vcf);
     ui->lineEditGRM->setText(Parameter::grm);
-    ui->lineEditOpenMP->setText(QString::number(Parameter::openmp));
+    ui->spinBoxOpenMP->setValue(Parameter::openmp);
 
     connect(ui->buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(apply()));
 }
@@ -41,7 +41,7 @@ QStringList DialogGSC::getArgs() const
     if ( ! ui->lineEditTop->text().isEmpty() )
         args << QLatin1String("--top") << ui->lineEditTop->text();
 
-    if (ui->lineEditOpenMP->text().toInt() > 0)
+    if (ui->spinBoxOpenMP->value() > 0)
         args << QLatin1String("--openmp");
 
     QString prefix = QLatin1String("rtm-gwas-gsc.out.");
@@ -56,9 +56,7 @@ void DialogGSC::apply()
 {
     Parameter::vcf = ui->lineEditVCF->text();
     Parameter::grm = ui->lineEditGRM->text();
-    Parameter::openmp = ui->lineEditOpenMP->text().toInt();
-    if (Parameter::openmp < 0)
-        Parameter::openmp = 0;
+    Parameter::openmp = ui->spinBoxOpenMP->value();
 }
 
 void DialogGSC::on_pushButtonVCF_clicked()

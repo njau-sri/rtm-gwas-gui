@@ -14,7 +14,7 @@ DialogAssoc::DialogAssoc(QWidget *parent) :
     ui->lineEditVCF->setText(Parameter::vcf);
     ui->lineEditPheno->setText(Parameter::pheno);
     ui->lineEditCovar->setText(Parameter::covar);
-    ui->lineEditOpenMP->setText(QString::number(Parameter::openmp));
+    ui->spinBoxOpenMP->setValue(Parameter::openmp);
 
     connect(ui->buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(apply()));
 }
@@ -54,7 +54,7 @@ QStringList DialogAssoc::getArgs() const
     if (ui->comboBoxMtc->currentIndex() != 0)
         args << QLatin1String("--mtc") << ui->comboBoxMtc->currentText();
 
-    if (ui->lineEditOpenMP->text().toInt() > 0)
+    if (ui->spinBoxOpenMP->value() > 0)
         args << QLatin1String("--openmp");
 
     if ( ! ui->checkBoxGxe->isChecked() )
@@ -73,10 +73,7 @@ void DialogAssoc::apply()
     Parameter::vcf = ui->lineEditVCF->text();
     Parameter::pheno = ui->lineEditPheno->text();
     Parameter::covar = ui->lineEditCovar->text();
-
-    Parameter::openmp = ui->lineEditOpenMP->text().toInt();
-    if (Parameter::openmp < 0)
-        Parameter::openmp = 0;
+    Parameter::openmp = ui->spinBoxOpenMP->value();
 }
 
 void DialogAssoc::on_pushButtonVCF_clicked()

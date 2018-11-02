@@ -166,9 +166,9 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEditOpenMP">
-        <property name="text">
-         <string>0</string>
+       <widget class="QSpinBox" name="spinBoxOpenMP">
+        <property name="maximum">
+         <number>16</number>
         </property>
        </widget>
       </item>
