@@ -12,5 +12,5 @@ make distclean
 qmake
 make
 
-macdeployqt rtm-gwas.app
-mv rtm-gwas.app macos/
+macdeployqt rtm-gwas-gui.app
+mv rtm-gwas-gui.app macos/
