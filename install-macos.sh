@@ -13,4 +13,4 @@ qmake
 make
 
 macdeployqt rtm-gwas.app
-cp -r rtm-gwas.app macos/
+mv rtm-gwas.app macos/
