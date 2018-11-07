@@ -8,11 +8,16 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QDir::setCurrent(QDir::homePath());
+    QDir home = QDir::home();
+#ifdef Q_OS_WIN
+    home.cd(QLatin1String("Documents"));
+#endif
+    home.mkdir(QLatin1String("rtm-gwas_results"));
+    home.cd(QLatin1String("rtm-gwas_results"));
 
-    Parameter::root = QApplication::applicationDirPath();
-    Parameter::work = QDir::homePath();
-    Parameter::open = QDir::homePath();
+    Parameter::work = home.absolutePath();
+    Parameter::open = Parameter::work;
+    QDir::setCurrent(Parameter::work);
 
     QRect s = QApplication::desktop()->screenGeometry();
 

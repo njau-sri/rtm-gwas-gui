@@ -1,6 +1,5 @@
 #include "parameter.h"
 
-QString Parameter::root;
 QString Parameter::work;
 QString Parameter::open;
 

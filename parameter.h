@@ -5,7 +5,6 @@
 
 struct Parameter
 {
-    static QString root;
     static QString work;
     static QString open;
 
