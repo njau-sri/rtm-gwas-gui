@@ -30,6 +30,9 @@
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEditVCF"/>
       </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEditBlock"/>
+      </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="pushButtonVCF">
         <property name="text">
@@ -37,7 +40,14 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButtonBlock">
+        <property name="text">
+         <string>Browse...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
        <widget class="QLabel" name="labelBlock">
         <property name="text">
          <string>Block:</string>
@@ -45,12 +55,12 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEditBlock"/>
+       <widget class="QLineEdit" name="lineEditFam"/>
       </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="pushButtonBlock">
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelFam">
         <property name="text">
-         <string>Browse...</string>
+         <string>Family:</string>
         </property>
        </widget>
       </item>
@@ -175,6 +185,19 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEditVCF</tabstop>
+  <tabstop>pushButtonVCF</tabstop>
+  <tabstop>lineEditFam</tabstop>
+  <tabstop>lineEditBlock</tabstop>
+  <tabstop>pushButtonBlock</tabstop>
+  <tabstop>lineEditMaf</tabstop>
+  <tabstop>lineEditMaxlen</tabstop>
+  <tabstop>lineEditLlim</tabstop>
+  <tabstop>lineEditUlim</tabstop>
+  <tabstop>lineEditRecomb</tabstop>
+  <tabstop>lineEditInform</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -184,8 +207,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>257</x>
+     <y>355</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -200,8 +223,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>325</x>
+     <y>355</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

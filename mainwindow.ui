@@ -191,6 +191,7 @@ color: rgb(0, 255, 0);</string>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>listWidgetFile</tabstop>
+  <tabstop>plainTextEditData</tabstop>
   <tabstop>plainTextEditLog</tabstop>
  </tabstops>
  <resources/>

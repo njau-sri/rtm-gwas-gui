@@ -119,6 +119,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEditVCF</tabstop>
+  <tabstop>pushButtonVCF</tabstop>
+  <tabstop>lineEditGRM</tabstop>
+  <tabstop>pushButtonGRM</tabstop>
+  <tabstop>lineEditTop</tabstop>
+  <tabstop>spinBoxOpenMP</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
