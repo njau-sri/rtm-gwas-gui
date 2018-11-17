@@ -5,7 +5,7 @@ mkdir $1
 
 make distclean
 
-if [ $1 == "lnx64" ]; then
+if [ $1 == "glnx64" ]; then
 
     qmake-qt4
     make
