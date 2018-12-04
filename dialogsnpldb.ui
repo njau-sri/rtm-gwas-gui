@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>417</width>
-    <height>365</height>
+    <width>560</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEditVCF"/>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
        <widget class="QLineEdit" name="lineEditBlock"/>
       </item>
       <item row="0" column="2">
@@ -40,27 +40,44 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="3" column="2">
        <widget class="QPushButton" name="pushButtonBlock">
         <property name="text">
          <string>Browse...</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="labelBlock">
         <property name="text">
          <string>Block:</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEditFam"/>
-      </item>
-      <item row="1" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="labelFam">
         <property name="text">
-         <string>Family:</string>
+         <string>RILs:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEditFam"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelGene">
+        <property name="text">
+         <string>Gene:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEditGene"/>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButtonGene">
+        <property name="text">
+         <string>Browse...</string>
         </property>
        </widget>
       </item>
@@ -97,7 +114,7 @@
       <item row="1" column="1">
        <widget class="QLineEdit" name="lineEditMaxlen">
         <property name="text">
-         <string>200000</string>
+         <string>100000</string>
         </property>
        </widget>
       </item>
@@ -157,6 +174,20 @@
         </property>
        </widget>
       </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="labelOpenMP">
+        <property name="text">
+         <string>OpenMP multithreading:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QSpinBox" name="spinBoxOpenMP">
+        <property name="maximum">
+         <number>16</number>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -188,15 +219,18 @@
  <tabstops>
   <tabstop>lineEditVCF</tabstop>
   <tabstop>pushButtonVCF</tabstop>
-  <tabstop>lineEditFam</tabstop>
+  <tabstop>lineEditGene</tabstop>
+  <tabstop>pushButtonGene</tabstop>
   <tabstop>lineEditBlock</tabstop>
   <tabstop>pushButtonBlock</tabstop>
+  <tabstop>lineEditFam</tabstop>
   <tabstop>lineEditMaf</tabstop>
   <tabstop>lineEditMaxlen</tabstop>
   <tabstop>lineEditLlim</tabstop>
   <tabstop>lineEditUlim</tabstop>
   <tabstop>lineEditRecomb</tabstop>
   <tabstop>lineEditInform</tabstop>
+  <tabstop>spinBoxOpenMP</tabstop>
  </tabstops>
  <resources/>
  <connections>

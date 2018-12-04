@@ -30,6 +30,8 @@ private slots:
 
     void on_pushButtonVCF_clicked();
 
+    void on_pushButtonGene_clicked();
+
     void on_pushButtonBlock_clicked();
 
 private:

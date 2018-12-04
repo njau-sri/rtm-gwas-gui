@@ -12,6 +12,7 @@ DialogSNPLDB::DialogSNPLDB(QWidget *parent) :
     ui->setupUi(this);
 
     ui->lineEditVCF->setText(Parameter::vcf);
+    ui->lineEditGene->setText(Parameter::gene);
     ui->lineEditBlock->setText(Parameter::block);
 
     connect(ui->buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(apply()));
@@ -33,6 +34,9 @@ QStringList DialogSNPLDB::getArgs() const
 
     if ( ! ui->lineEditVCF->text().isEmpty() )
         args << QLatin1String("--vcf") << ui->lineEditVCF->text();
+
+    if ( ! ui->lineEditGene->text().isEmpty() )
+        args << QLatin1String("--gene") << ui->lineEditGene->text();
 
     if ( ! ui->lineEditFam->text().isEmpty() )
         args << QLatin1String("--fam") << ui->lineEditFam->text();
@@ -58,6 +62,9 @@ QStringList DialogSNPLDB::getArgs() const
     if ( ! ui->lineEditInform->text().isEmpty() )
         args << QLatin1String("--inform") << ui->lineEditInform->text();
 
+    if (ui->spinBoxOpenMP->value() > 0)
+        args << QLatin1String("--openmp");
+
     QString prefix = QLatin1String("rtm-gwas-snpldb.out.");
     prefix += QDateTime::currentDateTime().toString(QLatin1String("yyMMdd_hhmmsszzz"));
 
@@ -69,6 +76,7 @@ QStringList DialogSNPLDB::getArgs() const
 void DialogSNPLDB::apply()
 {
     Parameter::vcf = ui->lineEditVCF->text();
+    Parameter::gene = ui->lineEditGene->text();
     Parameter::block = ui->lineEditBlock->text();
 }
 
@@ -77,6 +85,15 @@ void DialogSNPLDB::on_pushButtonVCF_clicked()
     QString fileName = QFileDialog::getOpenFileName(this, tr("Choose VCF file"), Parameter::open);
     if (!fileName.isEmpty()) {
         ui->lineEditVCF->setText(fileName);
+        Parameter::open = QFileInfo(fileName).absolutePath();
+    }
+}
+
+void DialogSNPLDB::on_pushButtonGene_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Choose gene file"), Parameter::open);
+    if (!fileName.isEmpty()) {
+        ui->lineEditGene->setText(fileName);
         Parameter::open = QFileInfo(fileName).absolutePath();
     }
 }

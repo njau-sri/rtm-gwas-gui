@@ -7,6 +7,7 @@ QString Parameter::vcf;
 QString Parameter::pheno;
 QString Parameter::covar;
 QString Parameter::block;
+QString Parameter::gene;
 QString Parameter::grm;
 
 int Parameter::txtsize = 10;

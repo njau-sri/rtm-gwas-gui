@@ -12,6 +12,7 @@ struct Parameter
     static QString pheno;
     static QString covar;
     static QString block;
+    static QString gene;
     static QString grm;
 
     static int txtsize;
