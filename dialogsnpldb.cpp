@@ -42,7 +42,7 @@ QStringList DialogSNPLDB::getArgs() const
         args << QLatin1String("--fam") << ui->lineEditFam->text();
 
     if ( ! ui->lineEditBlock->text().isEmpty() )
-        args << QLatin1String("--blk") << ui->lineEditBlock->text();
+        args << QLatin1String("--block") << ui->lineEditBlock->text();
 
     if ( ! ui->lineEditMaf->text().isEmpty() )
         args << QLatin1String("--maf") << ui->lineEditMaf->text();
