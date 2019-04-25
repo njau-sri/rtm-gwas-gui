@@ -25,7 +25,7 @@ DialogSNPLDB::~DialogSNPLDB()
 
 QString DialogSNPLDB::getProg() const
 {
-    return QDir(QApplication::applicationDirPath()).filePath(QLatin1String("rtm-gwas-snpldb"));
+    return QDir(Parameter::exe).filePath(QLatin1String("rtm-gwas-snpldb"));
 }
 
 QStringList DialogSNPLDB::getArgs() const

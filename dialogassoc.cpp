@@ -26,7 +26,7 @@ DialogAssoc::~DialogAssoc()
 
 QString DialogAssoc::getProg() const
 {
-    return QDir(QApplication::applicationDirPath()).filePath(QLatin1String("rtm-gwas-assoc"));
+    return QDir(Parameter::exe).filePath(QLatin1String("rtm-gwas-assoc"));
 }
 
 QStringList DialogAssoc::getArgs() const

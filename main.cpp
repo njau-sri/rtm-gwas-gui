@@ -8,6 +8,17 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    Parameter::exe = QApplication::applicationDirPath();
+#ifdef Q_OS_MAC
+    if (Parameter::exe.endsWith(QLatin1String(".app/Contents/MacOS"))) {
+        QDir exe(Parameter::exe);
+        exe.cdUp();
+        exe.cdUp();
+        exe.cdUp();
+        Parameter::exe = exe.absolutePath();
+    }
+#endif
+
     QDir home = QDir::home();
 #ifdef Q_OS_WIN
     home.cd(QLatin1String("Documents"));

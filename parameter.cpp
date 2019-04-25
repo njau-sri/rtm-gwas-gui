@@ -2,6 +2,7 @@
 
 QString Parameter::work;
 QString Parameter::open;
+QString Parameter::exe;
 
 QString Parameter::vcf;
 QString Parameter::pheno;

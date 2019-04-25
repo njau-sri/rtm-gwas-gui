@@ -25,7 +25,7 @@ DialogGSC::~DialogGSC()
 
 QString DialogGSC::getProg() const
 {
-    return QDir(QApplication::applicationDirPath()).filePath(QLatin1String("rtm-gwas-gsc"));
+    return QDir(Parameter::exe).filePath(QLatin1String("rtm-gwas-gsc"));
 }
 
 QStringList DialogGSC::getArgs() const

@@ -7,6 +7,7 @@ struct Parameter
 {
     static QString work;
     static QString open;
+    static QString exe;
 
     static QString vcf;
     static QString pheno;
