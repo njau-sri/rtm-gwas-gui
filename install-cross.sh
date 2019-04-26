@@ -7,7 +7,7 @@ make distclean
 
 if [ $1 == "glnx64" ]; then
 
-	/opt/qt4-static/bin/qmake
+    qmake-qt4
     make
 
     strip -s rtm-gwas-gui
