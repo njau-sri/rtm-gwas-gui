@@ -23,6 +23,8 @@ if [[ $1 = "glnx64" ]]; then
     qmake-qt4 src || exit 1
     make || exit 1
 
+    # sudo apt install libqtgui4
+    # sudo yum install qt-x11
     mkdir $1
     cp rtm-gwas-gui $1/
     strip -s $1/rtm-gwas-gui

@@ -23,6 +23,8 @@ if [[ $1 = "glnx64" ]]; then
     qmake-qt5 src || exit 1
     make || exit 1
 
+    # sudo apt install libqt5widgets5
+    # sudo yum install qt5-qtbase-gui
     mkdir $1
     cp rtm-gwas-gui $1/
     strip -s $1/rtm-gwas-gui
