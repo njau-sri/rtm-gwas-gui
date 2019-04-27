@@ -29,7 +29,7 @@ if [[ $1 = "glnx64" ]]; then
 
 elif [[ $1 = "win32" ]]; then
 
-    mingw32-qmake-qt4 src || exit 1
+    mingw32-qmake-qt4 "CONFIG += static" src || exit 1
     make release || exit 1
 
     mkdir $1
@@ -38,7 +38,7 @@ elif [[ $1 = "win32" ]]; then
 
 elif [[ $1 = "win64" ]]; then
 
-    mingw64-qmake-qt4 src || exit 1
+    mingw64-qmake-qt4 "CONFIG += static" src || exit 1
     make release || exit 1
 
     mkdir $1
