@@ -9,7 +9,7 @@ mkdir macos
 
 make distclean
 
-qmake
+qmake src
 make
 
 macdeployqt rtm-gwas-gui.app
