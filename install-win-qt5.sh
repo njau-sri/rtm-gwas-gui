@@ -12,7 +12,7 @@ if [[ -f Makefile ]]; then
     make distclean
 fi
 
-if [[ $1 = "win32" ]]; then
+if [[ $1 == "win32" ]]; then
 
     mingw32-qmake-qt5 src || exit 1
     make release || exit 1
@@ -41,7 +41,7 @@ if [[ $1 = "win32" ]]; then
     cp $MINGW/bin/zlib1.dll             $1/
     cp -r $PLUGIN_PLATFORMS             $1/
 
-elif [[ $1 = "win64" ]]; then
+elif [[ $1 == "win64" ]]; then
 
     mingw64-qmake-qt5 src || exit 1
     make release || exit 1
