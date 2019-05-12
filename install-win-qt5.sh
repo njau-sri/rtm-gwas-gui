@@ -1,14 +1,8 @@
 #!/bin/bash
 
-if [[ ! -f /etc/centos-release ]]; then
-    cat /etc/os-release | head -2
-    echo "ERROR: CentOS Linux is required"
-    exit 1
-fi
-
 if [[ $# -ne 1 ]]; then
     echo "ERROR: invalid argument"
-    echo "./install-cross-qt5.sh glnx64|win64|win32"
+    echo "./install-win-qt5.sh win32|win64"
     exit 1
 fi
 
@@ -18,18 +12,7 @@ if [[ -f Makefile ]]; then
     make distclean
 fi
 
-if [[ $1 = "glnx64" ]]; then
-
-    qmake-qt5 src || exit 1
-    make || exit 1
-
-    # sudo apt install libqt5widgets5
-    # sudo yum install qt5-qtbase-gui
-    mkdir $1
-    cp rtm-gwas-gui $1/
-    strip -s $1/rtm-gwas-gui
-
-elif [[ $1 = "win32" ]]; then
+if [[ $1 = "win32" ]]; then
 
     mingw32-qmake-qt5 src || exit 1
     make release || exit 1
@@ -89,8 +72,8 @@ elif [[ $1 = "win64" ]]; then
 
 else
 
-    echo "ERROR: invalid argument: $1"
-    echo "./install-cross-qt5.sh glnx64|win64|win32"
+    echo "ERROR: invalid argument"
+    echo "./install-win-qt5.sh win32|win64"
     exit 1
 
 fi
