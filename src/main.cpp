@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     Parameter::exe = QApplication::applicationDirPath();
-#ifdef Q_OS_MAC
+#ifdef Q_OS_DARWIN
     if (Parameter::exe.endsWith(QLatin1String(".app/Contents/MacOS"))) {
         QDir exe(Parameter::exe);
         exe.cdUp();
@@ -19,11 +19,11 @@ int main(int argc, char *argv[])
 #endif
 
     QDir home = QDir::home();
-#ifdef Q_OS_WIN
+#ifdef Q_OS_WIN32
     home.cd(QLatin1String("Documents"));
 #endif
-    home.mkdir(QLatin1String("rtm-gwas_results"));
-    home.cd(QLatin1String("rtm-gwas_results"));
+    home.mkdir(QLatin1String("RTM-GWAS"));
+    home.cd(QLatin1String("RTM-GWAS"));
 
     Parameter::work = home.absolutePath();
     Parameter::open = Parameter::work;
