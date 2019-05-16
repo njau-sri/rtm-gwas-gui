@@ -14,6 +14,7 @@ DialogSNPLDB::DialogSNPLDB(QWidget *parent) :
     ui->lineEditVCF->setText(Parameter::vcf);
     ui->lineEditGene->setText(Parameter::gene);
     ui->lineEditBlock->setText(Parameter::block);
+    ui->spinBoxOpenMP->setValue(Parameter::openmp);
 
     connect(ui->buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), this, SLOT(apply()));
 }
@@ -78,6 +79,7 @@ void DialogSNPLDB::apply()
     Parameter::vcf = ui->lineEditVCF->text();
     Parameter::gene = ui->lineEditGene->text();
     Parameter::block = ui->lineEditBlock->text();
+    Parameter::openmp = ui->spinBoxOpenMP->value();
 }
 
 void DialogSNPLDB::on_pushButtonVCF_clicked()
