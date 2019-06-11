@@ -44,7 +44,7 @@ QStringList DialogGSC::getArgs() const
     if (ui->spinBoxOpenMP->value() > 0)
         args << QLatin1String("--openmp");
 
-    QString prefix = QLatin1String("rtm-gwas-gsc.out.");
+    QString prefix = QLatin1String("gsc.out.");
     prefix += QDateTime::currentDateTime().toString(QLatin1String("yyMMdd_hhmmsszzz"));
 
     args << QLatin1String("--out") << QDir(Parameter::work).absoluteFilePath(prefix);

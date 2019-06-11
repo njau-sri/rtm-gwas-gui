@@ -60,7 +60,7 @@ QStringList DialogAssoc::getArgs() const
     if ( ! ui->checkBoxGxe->isChecked() )
         args << QLatin1String("--no-gxe");
 
-    QString prefix = QLatin1String("rtm-gwas-assoc.out.");
+    QString prefix = QLatin1String("assoc.out.");
     prefix += QDateTime::currentDateTime().toString(QLatin1String("yyMMdd_hhmmsszzz"));
 
     args << QLatin1String("--out") << QDir(Parameter::work).absoluteFilePath(prefix);
